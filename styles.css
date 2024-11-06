@@ -1,0 +1,596 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F2F5F3; 
+    scroll-behavior: smooth;
+}
+
+header {
+    background-color: #fff;
+    padding: 20px 0;
+    position: fixed;
+    inline-size: 100%;
+    inset-block-start: 0;
+    z-index: 10;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 14px; 
+    padding: 10px 15px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffffff; 
+    background-color: #7FC8A9; /
+    border-radius: 5px;
+}
+
+.login-btn, .cart-icon {
+    background-color: #7FC8A9; 
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.login-btn:hover, .cart-icon:hover {
+    background-color: #4CAF50; 
+}
+
+.cart-icon img {
+    block-size: 20px;
+    inline-size: 20px;
+}
+
+.section {
+    padding: 100px 50px;
+    text-align: center;
+    min-block-size: 100vh;
+    position: relative;
+}
+
+#home {
+    background: linear-gradient(135deg, #C2E6D2, #7FC8A9);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home-section .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    inline-size: 100%;
+    padding-block-start: 80px; 
+}
+
+.left-text {
+    max-inline-size: 300px;
+    text-align: start;
+}
+
+.left-text h1 {
+    font-family: 'Aboreto', cursive; 
+    font-size: 8rem;
+    color: #333;
+    font-weight: 300;
+}
+
+.left-text p {
+    font-size: 1.5rem;
+    margin-block-start: 10px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.covered {
+    font-weight: bold;
+}
+
+.right-text {
+    position: relative;
+    font-family: 'Aboreto', cursive;
+    font-size: 8rem;
+    color: #333;
+    text-transform: uppercase;
+    text-align: end;
+}
+
+.right-text .overlap {
+    position: relative;
+    z-index: 1;
+    font-size: 7rem;
+}
+
+.overlap-letter {
+    position: absolute;
+    inset-block-start: 50px;
+    inset-inline-start: -20px;
+}
+
+.image {
+    position: relative;
+    z-index: 2;
+}
+
+.image img {
+    max-inline-size: 500px;
+    block-size: auto;
+    position: absolute;
+    inset-block-start: -300px;
+    inset-inline-end: 100px;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.gallery img {
+    max-inline-size: 300px;
+    border-radius: 10px;
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Contact Form Styles */
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contact-form input,
+#contact-form textarea {
+    inline-size: 100%;
+    max-inline-size: 500px;
+    margin: 10px 0;
+    padding: 15px;
+    border: 2px solid #7FC8A9;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#contact-form button {
+    background-color: #7FC8A9; 
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#contact-form button:hover {
+    background-color: #4CAF50; 
+}
+
+/* Login Form Styles */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    inset-block-start: 50%;
+    inset-inline-start: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    inline-size: 100%;
+    max-inline-size: 400px;
+    display: none; 
+}
+
+.login-form h2 {
+    margin-block-end: 20px;
+    color: #333;
+}
+
+.login-form input {
+    inline-size: 100%;
+    margin: 10px 0;
+    padding: 15px;
+    border: 2px solid #7FC8A9;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.login-form button {
+    background-color: #7FC8A9; /
+    color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-form button:hover {
+    background-color: #4CAF50; 
+}
+
+#login-overlay {
+    display: none; /
+    position: fixed;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    inline-size: 100%;
+    block-size: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9;
+}
+#home {
+    background: linear-gradient(135deg, #C2E6D2, #7FC8A9);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; 
+}
+
+.home-section .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    inline-size: 100%;
+    padding-block-start: 80px;
+}
+
+.left-text {
+    max-inline-size: 300px;
+    text-align: start;
+}
+
+.left-text h1 {
+    font-family: 'Aboreto', cursive; 
+    font-size: 8rem;
+    color: #333;
+    font-weight: 300;
+}
+
+.left-text p {
+    font-size: 1.5rem;
+    margin-block-start: 10px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.covered {
+    font-weight: bold;
+}
+
+.right-text {
+    position: relative;
+    font-family: 'Aboreto', cursive;
+    font-size: 8rem;
+    color: #333;
+    text-transform: uppercase;
+    text-align: end;
+}
+
+.
+/* abya section */
+
+<section id="abaya" class="section " >
+    <h2>Abaya Collection</h2>
+    <div class="gallery">
+        <div class="product">
+        <img src="abaya3.jpg" alt="Traditional black abaya with gold accents">
+        <p class="product-name">Traditional Abaya with Gold Accents</p>
+        </div>
+        <div class="product">
+            <img src="url(abaya2.avif)" alt="Chic modern abaya in pastel shades">
+            <p class="product-name">Pastel Modern Abaya</p>
+        </div>
+        <div class="product">
+        <img src="abaya1.avif" alt="STARRY-NIGHT IN THE MOUNTAINS ABAYA">
+        <p class="product-name">Navy blue Front open, Kaftan style, pearls beadwork</p>
+           
+        </div>
+    </div>
+</section>
+
+
+
+/* Gallery for 6 images per section */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+    gap: 20px; 
+    justify-items: center;
+    margin-block-start: 30px; 
+}
+
+
+.section{
+   margin-block-end: 0px;
+  
+}
+.product {
+    text-align: center;
+}
+
+.product img {
+    max-inline-size: 150px; 
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.product img:hover {
+    transform: scale(1.05); 
+}
+
+.product-name {
+    margin-block-start: 10px;
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 13px; 
+    font-weight: 600; 
+    color: #333;
+}
+.cart-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #7FC8A9; /
+    border-radius: 50%; 
+    padding: 5px; 
+    inline-size: 30px; 
+    block-size: 30px;
+    transition: background-color 0.3s;
+}
+
+.cart-icon img {
+    max-inline-size: 20px; 
+    block-size: auto;
+}
+
+.cart-icon:hover {
+    background-color: #4CAF50; 
+}
+.accessories-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 30px; 
+    padding: 50px 100px;
+}
+
+.accessory-item {
+    text-align: center;
+}
+
+.accessory-item img {
+    inline-size: 150px;
+    block-size: 150px;
+    border-radius: 50%; 
+    object-fit: cover; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.accessory-item h3 {
+    margin-block-start: 15px;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    color: #2A432E;
+}
+/* About Us Section Styling */
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 50px;
+    background-color: #f9f9f9; 
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.about-text {
+    flex: 1;
+    text-align: start;
+    color: #333;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    margin-block-end: 20px;
+    color: #4CAF50; 
+    font-family: 'Aboreto', cursive;
+}
+
+.about-text p {
+    margin-block-end: 15px;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.about-image {
+    flex: 0.5;
+    text-align: center;
+}
+
+.about-image img {
+    inline-size: 250px;
+    block-size: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #7FC8A9; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+/* @media (max-inline-size: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image {
+        margin-block-start: 30px;
+    }
+} */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F2F5F3; 
+    scroll-behavior: smooth;
+}
+
+header {
+    background-color: #fff;
+    padding: 20px 0;
+    position: fixed;
+    inline-size: 100%;
+    inset-block-start: 0;
+    z-index: 10;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.navbar ul li {
+    margin: 0 10px; 
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 14px; 
+    padding: 10px 15px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #ffffff; 
+    background-color: #7FC8A9; 
+    border-radius: 5px;
+}
+
+.login-btn, .cart-icon {
+    background-color: #7FC8A9; 
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    margin-inline-start: 10px; /* Space between buttons */
+}
+
+.login-btn:hover, .cart-icon:hover {
+    background-color: #4CAF50; 
+}
+
+.cart-icon img {
+    block-size: 20px;
+    inline-size: 20px;
+}
+
+.section {
+    padding: 100px 50px;
+    text-align: center;
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    inset-block-start: 50%;
+    inset-inline-start: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    inline-size: 100%;
+    max-inline-size: 400px;
+    display: none; 
+}
+
+
+.banner {
+    position: relative;
+    overflow: hidden;
+}
+
+.banner img {
+    inline-size: 100%;
+    block-size: auto;
+}
+
+.banner-text {
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-start: 50%;
+    transform: translate(-50%, -50%);
+    color: white; 
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+}
+
+.banner h1 {
+    font-size: 4rem; 
+    margin: 0;
+}
+
+.banner p {
+    font-size: 1.5rem; 
+}
